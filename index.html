@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toda - M Sandi</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Todo List</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Form Todo -->
+      <section class="form-todo">
+        <input type="text" id="todo-input" placeholder="Add a todo..." />
+        <input type="date" id="date-input" />
+        <button class="add" onclick="addTodo()">+</button>
+      </section>
+
+      <!-- Actions Buttons -->
+      <section class="actions">
+        <button class="filter" onclick="filterTodo()">FILTER</button>
+        <button class="delete" onclick="deleteAll()">DELETE ALL</button>
+      </section>
+    </main>
+
+    <!-- List Todo -->
+    <section class="list-todo">
+      <table>
+        <thead>
+          <tr>
+            <th>TASK</th>
+            <th>DUE DATE</th>
+            <th>STATUS</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody id="todo-list">
+          <tr>
+            <td colspan="4" class="empty">No task found</td>
+          </tr>
+          <!-- Todo items will be dynamically added here -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 M Sandi Todo App</p>
+    </footer>
+  </body>
+</html>
