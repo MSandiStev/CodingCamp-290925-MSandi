@@ -1,53 +1,238 @@
 body {
-  display: grid;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-content: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
-h1 {
-  text-align: center;
+.container {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
 }
 
-.empty {
+header h1 {
   text-align: center;
+  color: black;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.form-todo {
+  display: flex;
+  gap: 10px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-footer {
-  text-align: center;
-  margin-top: 20px;
+#todo-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+#date-input {
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  color: grey;
+}
+
+#date-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.add {
+  padding: 10px 25px;
+  background: #667eea;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .actions {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter,
+.delete {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter {
+  background: #716f81;
+  color: white;
+}
+
+.filter:hover {
+  background: #38a169;
+  transform: translateY(-2px);
+}
+
+.delete {
+  background: #667eea;
+  color: black;
+}
+
+.delete:hover {
+  background: #e53e3e;
+  transform: translateY(-2px);
+}
+
+.list-todo {
   margin-top: 20px;
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  background: #716f81;
 }
 
-th,
-td {
-  padding: 12px 15px;
+thead {
+  background: #667eea;
+  color: white;
+}
+
+th {
+  padding: 15px;
   text-align: left;
-  border: 1px solid;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: white;
 }
 
-.form-todo {
+td {
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr {
+  transition: all 0.3s;
+}
+
+tbody tr:hover {
+  background: #f7fafc;
+}
+
+.empty {
+  text-align: center;
+  color: white;
+  padding: 40px !important;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.action-buttons {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.add {
-  padding: 10px 20px;
+.btn-complete,
+.btn-delete {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-complete {
+  background: #48bb78;
+  color: white;
+}
+
+.btn-complete:hover {
+  background: #38a169;
+}
+
+.btn-delete {
+  background: #f56565;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #e53e3e;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: #a0aec0;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: black;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .form-todo {
+    flex-direction: column;
+  }
+
+  #todo-input,
+  #date-input,
+  .add {
+    width: 100%;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
 }
