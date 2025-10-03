@@ -1,3 +1,6 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 body {
   min-height: 100vh;
   padding: 20px;
@@ -5,6 +8,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #0e2148;
+}
+
+main {
+  background-color: #44444e;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  color: #fff;
+  text-align: center;
 }
 
 .container {
@@ -18,7 +34,8 @@ body {
 
 header h1 {
   text-align: center;
-  color: black;
+  font-weight: bold;
+  color: #a7aae1;
   font-size: 2.5rem;
   margin-bottom: 30px;
 }
@@ -34,7 +51,9 @@ header h1 {
   flex: 1;
   min-width: 200px;
   padding: 15px;
-  border: 2px solid #e0e0e0;
+  background-color: #0e2148;
+  border: 2px solid #667eea;
+  color: white;
   border-radius: 10px;
   font-size: 16px;
   transition: all 0.3s;
@@ -42,10 +61,11 @@ header h1 {
 
 #date-input {
   padding: 15px;
-  border: 2px solid #e0e0e0;
+  background-color: #0e2148;
+  border: 2px solid #667eea;
   border-radius: 10px;
   font-size: 16px;
-  color: grey;
+  color: #ffffff;
 }
 
 #date-input:focus {
@@ -63,6 +83,11 @@ header h1 {
   cursor: pointer;
 }
 
+.add:hover {
+  background: grey;
+  color: black;
+  transform: translateY(-2px);
+}
 .actions {
   display: flex;
   justify-content: space-between;
@@ -82,12 +107,13 @@ header h1 {
 }
 
 .filter {
-  background: #716f81;
+  background: #0e2148;
   color: white;
 }
 
 .filter:hover {
-  background: #38a169;
+  background: #667eea;
+  color: black;
   transform: translateY(-2px);
 }
 
@@ -97,8 +123,9 @@ header h1 {
 }
 
 .delete:hover {
-  background: #e53e3e;
+  background: #0e2148;
   transform: translateY(-2px);
+  color: white;
 }
 
 .list-todo {
@@ -109,12 +136,12 @@ header h1 {
 table {
   width: 100%;
   border-collapse: collapse;
-  background: #716f81;
+  background: #0e2148;
 }
 
 thead {
   background: #667eea;
-  color: white;
+  color: 0e2148;
 }
 
 th {
@@ -129,14 +156,6 @@ th {
 td {
   padding: 15px;
   border-bottom: 1px solid #e0e0e0;
-}
-
-tbody tr {
-  transition: all 0.3s;
-}
-
-tbody tr:hover {
-  background: #f7fafc;
 }
 
 .empty {
@@ -204,7 +223,7 @@ tbody tr:hover {
 footer {
   text-align: center;
   margin-top: 30px;
-  color: black;
+  color: white;
   font-size: 14px;
 }
 
